@@ -1,0 +1,6 @@
+---
+- name: Init
+  ansible.builtin.shell: waydroid init -f
+  args:
+    creates: /var/lib/waydroid/images/system.img
+  become: true

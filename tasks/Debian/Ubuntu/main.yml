@@ -13,3 +13,10 @@
   args:
     creates: /etc/apt/sources.list.d/waydroid.list
   become: true
+
+- name: Install waydroid
+  ansible.builtin.apt:
+    pkg:
+    - waydroid
+  become: true
+  
