@@ -1,0 +1,15 @@
+---
+# doc: https://docs.waydro.id/usage/install-on-desktops#ubuntu-debian-and-derivatives
+
+- name: Install dependencies
+  ansible.builtin.apt:
+    pkg:
+    - ca-certificates
+    - curl
+  become: true
+
+- name: Add the official repository
+  ansible.builtin.shell: curl -s https://repo.waydro.id | sudo bash
+  args:
+    creates: /etc/apt/sources.list.d/waydroid.list
+  become: true
